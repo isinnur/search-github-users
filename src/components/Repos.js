@@ -6,7 +6,7 @@ import { useContext } from 'react';
 const Repos = () => {
   const { repos } = useContext(GithubContext);
   console.log(repos);
-  return <h2>repos component</h2>;
+  return <ExampleChart />
 };
 
 const Wrapper = styled.div`
