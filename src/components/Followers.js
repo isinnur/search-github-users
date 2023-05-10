@@ -3,7 +3,24 @@ import { GithubContext } from '../context/context';
 import styled from 'styled-components';
 
 const Followers = () => {
-  return <h2>followers component</h2>;
+  const { followers } = React.useContext(GithubContext);
+  console.log(followers);
+  return <Wrapper>
+    <div className='followers'>
+      {followers.map((follower, index) => {
+        const { avatar_url: img, html_url, login } = follower;
+        return <article key={index}>
+          <img src={img} alt={login} />
+          <div>
+            <h4>
+              {login}
+            </h4>
+          </div>
+          <a href={html_url}>{html_url}</a>
+        </article>
+      })}
+    </div>
+  </Wrapper>;
 };
 
 const Wrapper = styled.article`
@@ -40,7 +57,7 @@ const Wrapper = styled.article`
     transition: var(--transition);
     padding: 0.15rem 0.5rem;
     border-radius: var(--radius);
-    display: grid;
+    display:flex
     grid-template-columns: auto 1fr;
     align-items: center;
     column-gap: 1rem;
