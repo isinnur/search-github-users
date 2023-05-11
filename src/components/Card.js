@@ -33,7 +33,7 @@ const Card = () => {
   </Wrapper>;
 };
 const Wrapper = styled.article`
-  background: var(--clr-white);
+  background: #262A33;
   padding: 1.5rem 2rem;
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
@@ -45,8 +45,8 @@ const Wrapper = styled.article`
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    background: var(--clr-white);
-    color: var(--clr-grey-5);
+    background: #262A33;
+    color: #fff;
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
     text-transform: capitalize;
@@ -69,13 +69,14 @@ const Wrapper = styled.article`
     }
     h4 {
       margin-bottom: 0.25rem;
+      color:#fff;
     }
     p {
       margin-bottom: 0;
     }
     a {
-      color: var(--clr-primary-5);
-      border: 1px solid var(--clr-primary-5);
+      color: #617d98;
+      border: 1px solid #617d98;
       padding: 0.25rem 0.75rem;
       border-radius: 1rem;
       text-transform: capitalize;
@@ -83,13 +84,13 @@ const Wrapper = styled.article`
       transition: var(--transition);
       cursor: pointer;
       &:hover {
-        background: var(--clr-primary-5);
+        background: #617d98;
         color: var(--clr-white);
       }
     }
   }
   .bio {
-    color: var(--clr-grey-3);
+    color:#fff;
   }
   .links {
     p,
@@ -97,6 +98,7 @@ const Wrapper = styled.article`
       margin-bottom: 0.25rem;
       display: flex;
       align-items: center;
+      color:#fff;
       svg {
         margin-right: 0.5rem;
         font-size: 1.3rem;
