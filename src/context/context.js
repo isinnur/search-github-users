@@ -45,7 +45,7 @@ const GithubProvider = ({ children }) => {
                         setFollowers(followers.value.data);
                     }
 
-                })
+                }).catch(err => console.log(err))
         }
 
 
