@@ -11,6 +11,7 @@ const Card = () => {
     blog,
     bio,
     location,
+    login,
     twitter_username
   } = githubUser;
   return <Wrapper>
@@ -18,7 +19,7 @@ const Card = () => {
       <img src={avatar_url} alt={name} />
       <div>
         <h4>{name}</h4>
-        <p>@{twitter_username || 'Işınnur Günay'}</p>
+        <p>@{login}</p>
       </div>
 
       <a href={html_url}>Follow</a>
@@ -68,6 +69,7 @@ const Wrapper = styled.article`
       object-fit:cover;
     }
     h4 {
+      font-size:18px;
       margin-bottom: 0.25rem;
       color:#fff;
     }

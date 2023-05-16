@@ -31,23 +31,23 @@ const GithubProvider = ({ children }) => {
             setGithubUser(response.data);
             const { login, followers_url } = response.data;
 
-            //repos
-            axios(`${rootUrl}/users/${login}/repos?per_page=100`).
-                then(response => setRepos(response.data)
-                );
 
-            //followers
-            axios(`${followers_url}?per_page=100`).
-                then(response => setFollowers(response.data))
-            //more logic here
+            await Promise.allSettled([axios(`${rootUrl}/users/${login}/repos?per_page=100`), axios(`${followers_url}?per_page=100`)])
+                .then((results) => {
+                    console.log(results);
+                    const [repos, followers] = results;
+                    const status = 'fulfilled';
+                    if (repos.status === status) {
+                        setRepos(repos.value.data);
+                    }
 
-            // repos
-            // https://api.github.com/users/isinnur/repos?per_page=100
+                    if (followers.status === status) {
+                        setFollowers(followers.value.data);
+                    }
 
-            //followers
-            //https://api.github.com/users/isinnur/followers
-
+                })
         }
+
 
         else {
             toggleError(true, 'there is no user with that username');
