@@ -4,17 +4,15 @@ import { MdSearch } from 'react-icons/md';
 import { GithubContext } from '../context/context';
 const Search = () => {
   const [user, setUser] = React.useState('');
-  const { requests, error } = React.useContext(GithubContext);
+  const { requests, error, searchGithubUser } = React.useContext(GithubContext);
 
   //get things from global context
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
     if (user) {
-
-
-
-      setUser('');
+      searchGithubUser(user);
+      // setUser('');
     }
 
   };
@@ -23,7 +21,7 @@ const Search = () => {
   return (
     <section className='section'>
       <Wrapper className='section-center'>
-        {error && error.show(
+        {error.show && (
           <ErrorWrapper>
             <p>{error.msg}</p>
           </ErrorWrapper>
