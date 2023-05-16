@@ -4,8 +4,8 @@ import { MdSearch } from 'react-icons/md';
 import { GithubContext } from '../context/context';
 const Search = () => {
   const [user, setUser] = React.useState('');
-  const { requests } = React.useContext(GithubContext);
-  console.log(requests);
+  const { requests, error } = React.useContext(GithubContext);
+
   //get things from global context
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,19 +18,28 @@ const Search = () => {
     }
 
   };
-  return <section className='section'>
-    <Wrapper className='section-center'>
-      <form onSubmit={handleSubmit}>
-        <div className='form-control'>
-          <MdSearch />
-          <input type='text' placeholder='Enter Github User' value={user} onChange={(e) => setUser(e.target.value)} />
-          <button type='submit'>Search</button>
-        </div>
-      </form>
-      {requests > 0 && <h3> Requests: {requests} / 60</h3>}
 
-    </Wrapper>
-  </section>;
+
+  return (
+    <section className='section'>
+      <Wrapper className='section-center'>
+        {error && error.show(
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>
+        )}
+        <form onSubmit={handleSubmit}>
+          <div className='form-control'>
+            <MdSearch />
+            <input type='text' placeholder='Enter Github User' value={user} onChange={(e) => setUser(e.target.value)} />
+            <button type='submit'>Search</button>
+          </div>
+        </form>
+        {requests > 0 && <h3> Requests: {requests} / 60</h3>}
+
+      </Wrapper>
+    </section>
+  )
 };
 
 const Wrapper = styled.div`
@@ -116,7 +125,7 @@ const ErrorWrapper = styled.article`
   transform: translateY(-100%);
   text-transform: capitalize;
   p {
-    color: red;
+    color: #fff;
     letter-spacing: var(--spacing);
   }
 `;
