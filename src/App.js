@@ -7,26 +7,30 @@ import {
   Link,
   Switch
 } from "react-router-dom";
+import { Auth0Provider } from '@auth0/auth0-react';
 function App() {
   return (
-    <Router>
-      <Switch>
 
-        <PrivateRoute path="/" exact={true}>
-          <Dashboard></Dashboard>
-        </PrivateRoute>
+    <AuthWrapper>
+      <Router>
+        <Switch>
 
-        <Route path="/login">
-          <Login />
-        </Route>
+          <PrivateRoute path="/" exact={true}>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
 
-        <Route path="*">
-          <Error></Error>
-        </Route>
-      </Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route path="*">
+            <Error></Error>
+          </Route>
+        </Switch>
 
 
-    </Router>
+      </Router>
+    </AuthWrapper >
   );
 }
 
