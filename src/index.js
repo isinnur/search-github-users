@@ -18,12 +18,13 @@ root.render(
       domain="dev-52r1iukj3fzbwnrn.us.auth0.com"
       clientId="FgkKnTXQfKP1u3uWLyTTP9B26Wq74rJw"
       redirectUri={window.location.origin}
+      cacheLocation='localstorage'
     >
       <GithubProvider>
         <App />
       </GithubProvider>
     </Auth0Provider>
-  </React.Fragment>
+  </React.Fragment >
 );
 
 // If you want your app to work offline and load faster, you can change
