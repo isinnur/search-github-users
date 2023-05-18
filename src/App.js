@@ -4,8 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  Switch
+  Link
 } from "react-router-dom";
 import { Auth0Provider } from '@auth0/auth0-react';
 function App() {
@@ -13,20 +12,18 @@ function App() {
 
     <AuthWrapper>
       <Router>
-        <Switch>
+        <Routes>
 
-          <PrivateRoute path="/" exact={true}>
-            <Dashboard></Dashboard>
-          </PrivateRoute>
+          <Route path='/' element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
 
-          <Route path="/login">
-            <Login />
-          </Route>
+          } />
+          <Route path='login' element={<Login />} />
+          <Route path='*' element={<Error />} />
 
-          <Route path="*">
-            <Error></Error>
-          </Route>
-        </Switch>
+        </Routes>
 
 
       </Router>
