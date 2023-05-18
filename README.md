@@ -4,7 +4,7 @@
 
 
 For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
- You can view my project [here](https://r-search-github-users-r.netlify.app)  
+ You can view my project [here](https://r-search-github-users-r.netlify.app).
 
 
   
