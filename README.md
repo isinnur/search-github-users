@@ -9,14 +9,16 @@ For unauthenticated requests, the rate limit allows for up to 60 requests per ho
 
   
 >  You can register and login  
->  
-![image](https://github.com/isinnur/search-github-users/assets/98089962/1e4765fc-60e1-454f-bbf2-abc8d2ab77cd)
+  
+<img alt="" src="./src/images/ilki.jpg" width="100%">
+
 
 
 
 >  You or the users you want to look at can see the most starred projects, most used languages and forked projects through graphs  
->  
-![image](https://github.com/isinnur/search-github-users/assets/98089962/974b0d4c-754d-45aa-8cd0-3de96cf685f5)
+
+<img alt="" src="./src/images/ikincisi.2.jpg" width="100%">
+
 
 
 
