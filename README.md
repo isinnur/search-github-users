@@ -8,14 +8,14 @@ For unauthenticated requests, the rate limit allows for up to 60 requests per ho
 
 
   
->  You can register and login  
+>  You can register and login.
   
 <img alt="" src="./src/images/ilki.jpg" width="100%">
 
 
 
 
->  You or the users you want to look at can see the most starred projects, most used languages and forked projects through graphs  
+>  You or the users you want to look at can see the most starred projects, most used languages and forked projects through charts.  
 
 <img alt="" src="./src/images/ikincisi.2.jpg" width="100%">
 
